@@ -3,13 +3,10 @@
  */
 package org.example
 
-class App {
-    val greeting: String
-        get() {
-            return "Hello World!"
-        }
-}
-
 fun main() {
-    println(App().greeting)
+    val ENVIRONMENT = System.getenv("ENVIRONMENT")
+    val SOME_ENV = System.getenv("SOME_ENV")
+
+    println("I'm running in $ENVIRONMENT environment")
+    println("SOME_ENV is '$SOME_ENV'")
 }

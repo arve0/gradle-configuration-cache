@@ -47,3 +47,9 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.named<JavaExec>("run") {
+    // set ENVIRONMENT to local when running with gradle
+    val envOrLocal = System.getenv("ENVIRONMENT") ?: "local"
+    environment("ENVIRONMENT", envOrLocal)
+}
